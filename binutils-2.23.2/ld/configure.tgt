@@ -401,6 +401,9 @@ microblaze*)		targ_emul=elf32microblaze ;;
 mips*-*-pe)		targ_emul=mipspe ;
 			targ_extra_ofiles="deffilep.o pe-dll.o" ;;
 mips*-dec-ultrix*)	targ_emul=mipslit ;;
+mips-baremetal-elf)	
+                echo "yay baremetal emul"
+                targ_emul=mips_baremetal;;
 mips*-dec-osf*)		targ_emul=mipslit ;;
 mips*-sgi-irix5*)	targ_emul=elf32bsmip ;;
 mips*-sgi-irix6*)	targ_emul=elf32bmipn32

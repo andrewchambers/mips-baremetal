@@ -1324,6 +1324,9 @@ case $os in
 	-auroraux)
 		os=-auroraux
 		;;
+    -baremetal)
+        os=-baremetal
+        ;;
 	-solaris1 | -solaris1.*)
 		os=`echo $os | sed -e 's|solaris1|sunos4|'`
 		;;

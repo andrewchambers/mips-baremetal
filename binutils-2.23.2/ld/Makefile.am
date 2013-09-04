@@ -239,6 +239,7 @@ ALL_EMULATION_SOURCES = \
 	eelf32mep.c \
 	eelf32microblaze.c \
 	eelf32mipswindiss.c \
+	emips_baremetal.c \
 	eelf32moxie.c \
 	eelf32mt.c \
 	eelf32openrisc.c \
@@ -978,6 +979,10 @@ eelf32btsmip.c: $(srcdir)/emulparams/elf32btsmip.sh \
   $(srcdir)/emulparams/elf32bmip.sh $(ELF_DEPS) \
   $(srcdir)/emultempl/mipself.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
 	${GENSCRIPTS} elf32btsmip "$(tdir_elf32btsmip)"
+mips_baremetal.c: $(srcdir)/emulparams/mips_baremetal.sh \
+  $(srcdir)/emulparams/elf32bmip.sh $(ELF_DEPS) \
+  $(srcdir)/emultempl/mipself.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}
+	${GENSCRIPTS} mips_baremetal "$(tdir_mips_baremetal)"
 eelf32btsmip_fbsd.c: $(srcdir)/emulparams/elf32btsmip_fbsd.sh \
   $(srcdir)/emulparams/elf32bmip.sh $(ELF_DEPS) \
   $(srcdir)/emultempl/mipself.em $(srcdir)/scripttempl/elf.sc ${GEN_DEPENDS}

@@ -122,6 +122,11 @@ esac
 #  targmatch.h.
 
 case "${targ}" in
+  mips-baremetal-elf)
+    echo "Bare metal! yay!"
+    targ_defvec=bfd_elf32_bigmips_vec
+    targ_selvecs="bfd_elf32_littlemips_vec"
+    ;;
   mips*-dec-bsd*)
     echo "This target is obsolete and has been removed."
     exit 1
