@@ -728,6 +728,10 @@ mips*-*-linux*)				# Linux MIPS, either endian.
 		tmake_file="${tmake_file} mips/t-tpbit"
 	fi
 	;;
+mips*-baremetal-elf)
+	tmake_file="$tmake_file mips/t-crtstuff mips/t-mips16"
+	extra_parts="$extra_parts crti.o crtn.o"
+	;;
 mips*-sde-elf*)
 	tmake_file="$tmake_file mips/t-crtstuff mips/t-mips16"
 	case "${with_newlib}" in
