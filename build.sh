@@ -14,7 +14,7 @@ cd ..
 echo "building gcc..."
 mkdir -p build-gcc
 cd build-gcc
-../gcc-4.8.1/configure --target=$TARGET --prefix=$PREFIX --disable-nls --enable-languages=c
+../gcc-4.8.1/configure --disable-lto --target=$TARGET --prefix=$PREFIX --disable-nls --enable-languages=c
 make all-gcc
 make install-gcc
 make all-target-libgcc
