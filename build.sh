@@ -6,7 +6,7 @@ echo "building binutils"
  
 mkdir -p build-binutils
 cd build-binutils
-../binutils-2.23.2/configure --target=$TARGET --prefix=$PREFIX
+../binutils-2.23.2/configure CFLAGS=-Wno-error --target=$TARGET --prefix=$PREFIX
 make
 make install
 cd ..
@@ -14,7 +14,7 @@ cd ..
 echo "building gcc..."
 mkdir -p build-gcc
 cd build-gcc
-../gcc-4.8.1/configure --disable-lto --target=$TARGET --prefix=$PREFIX --disable-nls --enable-languages=c
+../gcc-4.8.1/configure CFLAGS=-Wno-error --disable-lto --target=$TARGET --prefix=$PREFIX --disable-nls --enable-languages=c
 make all-gcc
 make install-gcc
 make all-target-libgcc
